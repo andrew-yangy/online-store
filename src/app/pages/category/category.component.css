@@ -1,0 +1,73 @@
+.header-image {
+    height: 400px;
+    background: url("../../../assets/imgs/plates-header.jpg") no-repeat;
+    background-size:cover;
+    background-position: center center;
+}
+.header-block {
+    height: 100%;
+    background-color: #3A3A35;
+    color:white;
+    width: 50%;
+    margin:auto;
+    border-color:white;
+    border-style:solid;
+    border-width: 0 15px;
+    display:table;
+}
+.header-text {
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}
+.header-text-title {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 500;
+    padding-bottom:10px;
+    border-bottom: 1px solid white;
+}
+.header-text p {
+    padding:10px 40px
+}
+.layout-container {
+    max-width: 1140px;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.product-grid {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.product-image {
+    width: 330px;
+    height: 220px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.product-details {
+    padding-top: 15px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.product-brand {
+    display: block;
+    margin: .5em 0;
+    color: #7d7d7d;
+}
+.product-title {
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin-top: 0;
+    margin-bottom: .44444em;
+    font-size: 1em;
+    line-height: 1.2;
+    font-weight: 600;
+}
+.product-price {
+    font-size: 1.14286em;
+    color: #9f9f9f;
+}

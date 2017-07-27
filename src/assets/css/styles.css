@@ -1,0 +1,46 @@
+.main-header {
+    color: #1d1d20;
+    vertical-align: middle;
+    position: relative;
+    display: table;
+    width: 100%;
+    background-color: #fff;
+}
+.main-header .header-menu {
+    display: table;
+    width: 100%;
+    padding: 0 15px;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    box-sizing: border-box;
+    table-layout: fixed;
+    border-bottom-color: #e4e4e4;
+}
+.header-nav-wrapper,
+.header-cart-wrapper {
+    display: table-cell;
+    font-weight: 700;
+    vertical-align: middle;
+}
+.header-nav {
+    display: block;
+    margin: 0;
+    text-align: center;
+}
+.header-nav-item:first-child {
+    margin-left: 0;
+}
+.header-nav-item {
+    display: inline-block;
+    margin-left: 30px;
+    position: inherit;
+}
+.header-cart-item .fa,
+.header-nav-item .fa {
+    margin-top: 1px;
+    margin-left: 6px;
+}
+.header-cart {
+    text-align:right;
+    margin-right:30px;
+}
