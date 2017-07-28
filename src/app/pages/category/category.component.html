@@ -13,7 +13,13 @@
 <div class="layout-container">
     <div class="product-grid">
         <div class="col-md-4" *ngFor="let product of products">
-            <div class="product-image" [ngStyle]="{'background-image': 'url(../../../assets/imgs/' + product.image + ')'}"></div>
+            <div class="image-container">
+                <div class="product-image" [ngStyle]="{'background-image': 'url(../../../assets/imgs/' + product.image + ')'}"></div>
+                <div class="overlay">
+                    <div class="button button-primary">View Details</div>
+                    <div class="button button-primary">Add To Cart</div>
+                </div>
+            </div>
             <div class="product-details">
                 <div class="product-brand">{{product.brand}}</div>
                 <div class="product-title">{{product.title}}</div>

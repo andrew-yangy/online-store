@@ -1,3 +1,5 @@
+@import url('//fonts.googleapis.com/css?family=Roboto:400,400italic,500,700|Playfair+Display:400,400italic,700,700italic|Montserrat:400|Karla:400');
+
 .main-header {
     color: #1d1d20;
     vertical-align: middle;
@@ -19,7 +21,7 @@
 .header-nav-wrapper,
 .header-cart-wrapper {
     display: table-cell;
-    font-weight: 700;
+    font-weight: 500;
     vertical-align: middle;
 }
 .header-nav {
@@ -29,6 +31,9 @@
 }
 .header-nav-item:first-child {
     margin-left: 0;
+}
+.header-nav-item a {
+    color:black;
 }
 .header-nav-item {
     display: inline-block;
@@ -44,3 +49,35 @@
     text-align:right;
     margin-right:30px;
 }
+.header-cart-item a {
+    color:black;
+}
+
+.button {
+    display: inline-block;
+    height: 38px;
+    padding: 0 30px;
+    color: white;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 38px;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 1px solid #3b3d38;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+}
+.button.button-primary {
+    color: #fff;
+    background-color: #3b3d38;
+    border-color: #3b3d38;
+}
+.button.button-primary:hover {
+    background-color: #4a4a4d;
+}
+

@@ -48,6 +48,28 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+.image-container {
+    position: relative;
+}
+.image-container:hover .product-image{
+    opacity: 0.3;
+    background-size:120%;
+}
+.image-container:hover .overlay{
+    opacity: 1;
+}
+.overlay {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
+}
+.overlay .button {
+    width: 160px;
+}
 .product-details {
     padding-top: 15px;
     text-align: center;
@@ -65,9 +87,11 @@
     margin-bottom: .44444em;
     font-size: 1em;
     line-height: 1.2;
-    font-weight: 600;
+    font-weight: 400;
+    font-family: Roboto;
 }
 .product-price {
     font-size: 1.14286em;
     color: #9f9f9f;
+    font-family: Playfair Display;
 }

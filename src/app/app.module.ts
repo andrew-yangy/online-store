@@ -6,19 +6,24 @@ import {FormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {RouterModule} from "@angular/router";
 import {appRoutes} from "./app.routes";
+import {TopbarComponent} from "./components/topbar/topbar.component";
+import {CartService} from "./services/cart.service";
+import {CartPopupComponent} from "./pages/cart/cart-popup/cart-popup.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserAnimationsModule,
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    RouterModule.forRoot(appRoutes)
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        TopbarComponent,
+        CartPopupComponent
+    ],
+    imports: [
+        BrowserAnimationsModule,
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        RouterModule.forRoot(appRoutes)
+    ],
+    providers: [CartService],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
