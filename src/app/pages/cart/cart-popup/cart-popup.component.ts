@@ -2,37 +2,38 @@
  * Created by andrew.yang on 7/28/2017.
  */
 
-import {Component, HostBinding} from "@angular/core";
+import {Component, HostBinding, ElementRef} from "@angular/core";
 import {CartService} from "../../../services/cart.service";
+import {CartBaseComponent} from "../cart-base.component";
 
 @Component({
     selector: 'cart-popup',
     styleUrls: ["cart-popup.component.css"],
     templateUrl: 'cart-popup.component.html',
     host: {
-        '(document:click)': 'onDocumentClick($event)',
+        '(document:click)': 'onPageClick($event)',
     }
 })
-export class CartPopupComponent{
-
+export class CartPopupComponent extends CartBaseComponent{
     @HostBinding("class.visible") isVisible:boolean = false;
 
     constructor(
-        private cartService: CartService
+        protected cartService: CartService,
+        private eleref: ElementRef
     ) {
+        super(cartService);
     }
     ngOnInit() {
         this.cartService.toggleCartSubject.subscribe(res => {
             this.isVisible = res;
-            console.log(res);
-        })
+        });
     }
-
-    onDocumentClick(event){
-        // if (this.isVisible && !this._eref.nativeElement.contains(event.target)){
-        //     this.close();
-        // }
-    }
-
-
+    removeFromCart = index => {
+        this.cartService.removeCart(index);
+    };
+    onPageClick = (event) => {
+        if (this.isVisible && !this.eleref.nativeElement.contains(event.target) && event.target.className !== 'cart-remove'){
+            this.cartService.toggleCart();
+        }
+    };
 }

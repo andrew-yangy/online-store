@@ -7,7 +7,7 @@ import {CartService} from "../../services/cart.service";
 @Component({
     selector: 'top-bar',
     template: `    
-    <div class="main-header">
+    <div class="main-header navbar-fixed-top">
         <div class="header-menu">
             <div class="col-md-4">
                 <img class="header-logo-image" src="../assets/imgs/logo.png" alt="Hero">
@@ -31,7 +31,7 @@ import {CartService} from "../../services/cart.service";
             <div class="header-cart-wrapper">
                 <div class="header-cart">
                     <div class="header-cart-item">
-                        <a href="" (click)="toggleCartPopup($event)">MY CART<span class="fa fa-caret-down"></span></a>
+                        <a href="" (click)="toggleCartPopup($event)">MY CART <span *ngIf="cart_num">( {{cart_num}} )</span><span class="fa fa-caret-down"></span></a>
                     </div>
                 </div>
             </div>
@@ -41,11 +41,17 @@ import {CartService} from "../../services/cart.service";
 `
 })
 export class TopbarComponent implements OnInit {
+    private cart_num:number;
     constructor(
         private cartService: CartService
     ) { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        this.cartService.cartListSubject
+            .subscribe(res => {
+                this.cart_num = res.length;
+            })
+    }
     toggleCartPopup = (event) => {
         event.preventDefault();
         event.stopPropagation();

@@ -1,9 +1,10 @@
 @import url('//fonts.googleapis.com/css?family=Roboto:400,400italic,500,700|Playfair+Display:400,400italic,700,700italic|Montserrat:400|Karla:400');
-
+body {
+    padding-top:70px;
+}
 .main-header {
     color: #1d1d20;
     vertical-align: middle;
-    position: relative;
     display: table;
     width: 100%;
     background-color: #fff;
@@ -21,7 +22,7 @@
 .header-nav-wrapper,
 .header-cart-wrapper {
     display: table-cell;
-    font-weight: 500;
+    font-weight: 700;
     vertical-align: middle;
 }
 .header-nav {
@@ -32,8 +33,10 @@
 .header-nav-item:first-child {
     margin-left: 0;
 }
+.header-cart-item a,
 .header-nav-item a {
-    color:black;
+    color:#1d1d20;
+    font-family: Roboto;
 }
 .header-nav-item {
     display: inline-block;
@@ -49,20 +52,15 @@
     text-align:right;
     margin-right:30px;
 }
-.header-cart-item a {
-    color:black;
-}
 
 .button {
     display: inline-block;
-    height: 38px;
     padding: 0 30px;
     color: white;
     text-align: center;
-    font-size: 11px;
+    font-size: 0.85em;
     font-weight: 600;
-    line-height: 38px;
-    letter-spacing: .1rem;
+    letter-spacing: .15rem;
     text-transform: uppercase;
     text-decoration: none;
     white-space: nowrap;
@@ -70,7 +68,6 @@
     border: 1px solid #3b3d38;
     cursor: pointer;
     box-sizing: border-box;
-    margin-bottom: 2rem;
 }
 .button.button-primary {
     color: #fff;
@@ -78,6 +75,24 @@
     border-color: #3b3d38;
 }
 .button.button-primary:hover {
-    background-color: #4a4a4d;
+    color: #fff;
+    background-color: #52525b;
+    border-color: #52525b;
+}
+.button.button-secondary {
+    color: #1d1d20;
+    background-color: #fff;
+    border-color: #1d1d20;
+}
+.button.button-secondary:hover {
+    color: #fff;
+    background-color: #8e8e90;
+    border-color: #8e8e90;
+}
+.button.button-wide {
+    width: 100%;
+}
+.button.button-large {
+    padding: 19px 22.5px;
 }
 

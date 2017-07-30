@@ -69,6 +69,10 @@
 }
 .overlay .button {
     width: 160px;
+    line-height: 38px;
+}
+.overlay .button:first-child {
+    margin-bottom: 2em;
 }
 .product-details {
     padding-top: 15px;

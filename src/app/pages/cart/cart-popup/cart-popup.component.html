@@ -1,1 +1,46 @@
-123444sdsa
+<div class="pop-cart-item" *ngFor="let cart of cartList;let i = index">
+    <div class="pop-cart-item-image-wrapper">
+        <a class="pop-cart-item-image" title={{cart.product.title}}
+           [ngStyle]="{'background-image': 'url(../../../assets/imgs/' + cart.product.image + ')'}">
+        </a>
+    </div>
+    <div class="pop-cart-item-details">
+        <h1 class="pop-cart-item-title">
+            <a href="">{{cart.product.title}} <span class="pop-cart-item-quantity">× {{cart.quantity}}</span></a>
+        </h1>
+        <span class="pop-cart-item-brand">
+            {{cart.product.brand}}
+        </span>
+        <span class="pop-cart-item-price">
+            {{cart.product.price | currency :'USD':true }}
+        </span>
+    </div>
+    <div class="pop-cart-remove-wrapper">
+        <span (click)="removeFromCart(i)" class="cart-remove">X</span>
+    </div>
+</div>
+<div *ngIf="cartList.length > 0">
+    <div class="cart-total">
+        <div class="cart-total-item">
+        <span class="cart-total-label">
+            Total
+        </span>
+            <span class="cart-total-value">
+            {{totalPrice | currency :'USD':true }}
+        </span>
+        </div>
+    </div>
+    <footer class="quick-cart-footer">
+        <div class="quick-cart-footer-cell">
+            <div class="button button-secondary button-wide button-large">View Cart</div>
+        </div>
+
+        <div class="quick-cart-footer-cell">
+            <div class="button button-primary button-wide button-large">Checkout</div>
+        </div>
+    </footer>
+</div>
+<div *ngIf="cartList.length == 0">
+    <strong class="cart-empty">Your cart is empty</strong>
+</div>
+
