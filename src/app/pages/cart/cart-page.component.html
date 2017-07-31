@@ -1,0 +1,23 @@
+<div class="cart-page-container">
+    <div class="cart-page-header">
+        <h1>Shopping Cart</h1>
+    </div>
+    <div class="cart-page-content">
+        <div class="cart-item-header cart-item-row">
+            <div class="cart-item-cell cart-item-product"><span>Product</span></div>
+            <div class="cart-item-cell cart-item-quantity"><span>Quantity</span></div>
+            <div class="cart-item-cell cart-item-total"><span>Total</span></div>
+            <div class="cart-item-cell cart-item-action"><span>Action</span></div>
+        </div>
+        <div class="cart-item-row" *ngFor="let cart of cartList;let i = index">
+            <div class="cart-item-cell cart-item-product">
+                <div class="cart-item-thumbnail" [ngStyle]="{'background-image': 'url(../../../assets/imgs/' + cart.product.image + ')'}">
+                </div>
+                <div class="cart-item-info">
+                    <div class="cart-item-brand">{{cart.product.brand}}</div>
+                    <div class="cart-item-title">{{cart.product.title}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

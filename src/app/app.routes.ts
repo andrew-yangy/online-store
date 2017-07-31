@@ -16,6 +16,10 @@ export const appRoutes=[
         loadChildren:'./pages/product/product.module#ProductModule'
     },
     {
+        path:'cart',
+        loadChildren:'./pages/cart/cart-page.module#CartPageModule'
+    },
+    {
         path:'**',
         loadChildren:'./pages/category/category.module#CategoryModule'
     }
