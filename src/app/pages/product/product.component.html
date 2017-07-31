@@ -17,7 +17,7 @@
                     <div class="product-description">{{product.description}}</div>
                 </div>
                 <div class="product-details-button">
-                    <quantity-control (quantity)="quantity" (change)="changeQuantity($event)"></quantity-control>
+                    <quantity-control [quantity]="quantity" (onChange)="changeQuantity($event)"></quantity-control>
                     <div class="product-cart-button button button-primary button-large" (click)="addToCart(product)">Add to cart</div>
                 </div>
             </div>

@@ -12,7 +12,7 @@ import {CartService} from "../../services/cart.service";
 export class ProductComponent implements OnInit {
     private sub;
     private product:Product;
-    private quantity: number = 1;
+    quantity: number = 1;
     constructor(private route: ActivatedRoute,
                 private productService:ProductService,
                 private cartService:CartService
@@ -34,7 +34,7 @@ export class ProductComponent implements OnInit {
         this.quantity = newQuantity;
     };
     addToCart = (product) => {
-        this.cartService.addToCart({product,quantity:this.quantity})
+        if(this.quantity) this.cartService.addToCart({product,quantity:this.quantity})
     };
     ngOnDestroy() {
         this.sub.unsubscribe();

@@ -2,6 +2,7 @@
  * Created by andrew.yang on 7/31/2017.
  */
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {version} from "punycode";
 
 @Component({
     selector: 'quantity-control',
@@ -15,12 +16,14 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
       height: 56px;
       width: 50px;
       float: left;
-      text-align: center;
     }
-    .number {
-      line-height: 56px;
+    .input-style {
+      text-align: center;
+      width:50px;
+      line-height: 54px;
       background: #eee;
       color:#7b7b7b;
+      border: 0;
     }
     .actions {
       margin-left: 2px;
@@ -50,10 +53,15 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
       -ms-user-select: none;
       user-select: none;
     }
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+    }
   `],
     template: `
-    <div class="number noselect">
-        {{quantity}}
+    <div class="number">
+        <input class="input-style" type="number" [ngModel]="quantity" (ngModelChange)="onChange.emit($event)">
     </div>
     <div class="actions">
         <div (click)="plusOne()" class="noselect">+</div>
@@ -62,21 +70,21 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 `
 })
 export class QuantityControlComponent implements OnInit {
-    @Input() quantity:number = 1;
-    @Output() change = new EventEmitter<number>();
+    @Input() quantity: number;
+    @Output() onChange = new EventEmitter<number>();
     constructor() { }
 
     ngOnInit() { }
     plusOne = () =>{
         if (this.quantity < 1000){
             this.quantity++;
-            this.change.emit(this.quantity);
+            this.onChange.emit(this.quantity);
         }
     };
     minusOne = () => {
         if (this.quantity > 1){
             this.quantity--;
-            this.change.emit(this.quantity);
+            this.onChange.emit(this.quantity);
         }
     }
 }
