@@ -6,8 +6,6 @@ import {RouterModule} from "@angular/router";
 import {categoryRoutes} from "./category.routes";
 import {SharedModule} from "../../shared/shared.module";
 import {CategoryComponent} from "./category.component";
-import {ProductService} from "../../services/products.service";
-import {CurrencyPipe} from "@angular/common";
 @NgModule({
     imports: [
         SharedModule,
@@ -15,9 +13,6 @@ import {CurrencyPipe} from "@angular/common";
     ],
     declarations: [
         CategoryComponent
-    ],
-    providers: [
-        ProductService
     ]
 })
 export class CategoryModule { }

@@ -9,6 +9,7 @@ import {appRoutes} from "./app.routes";
 import {TopbarComponent} from "./components/topbar/topbar.component";
 import {CartService} from "./services/cart.service";
 import {CartPopupComponent} from "./pages/cart/cart-popup/cart-popup.component";
+import {ProductService} from "./services/products.service";
 
 @NgModule({
     declarations: [
@@ -23,7 +24,7 @@ import {CartPopupComponent} from "./pages/cart/cart-popup/cart-popup.component";
         HttpModule,
         RouterModule.forRoot(appRoutes)
     ],
-    providers: [CartService],
+    providers: [CartService,ProductService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

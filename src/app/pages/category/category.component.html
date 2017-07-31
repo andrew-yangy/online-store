@@ -12,11 +12,11 @@
 </div>
 <div class="layout-container">
     <div class="product-grid">
-        <div class="col-md-4" *ngFor="let product of products">
+        <div class="col-md-4" *ngFor="let product of products;let i = index">
             <div class="image-container">
                 <div class="product-image" [ngStyle]="{'background-image': 'url(../../../assets/imgs/' + product.image + ')'}"></div>
                 <div class="overlay">
-                    <div class="button button-primary">View Details</div>
+                    <div class="button button-primary" [routerLink]="['../product',i+1]">View Details</div>
                     <div class="button button-primary" (click)="addToCart(product)">Add To Cart</div>
                 </div>
             </div>

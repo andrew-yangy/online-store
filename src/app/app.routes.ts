@@ -12,7 +12,11 @@ export const appRoutes=[
         loadChildren:'./pages/category/category.module#CategoryModule'
     },
     {
-        path:'**',//fallback router must in the last
+        path:'product',
+        loadChildren:'./pages/product/product.module#ProductModule'
+    },
+    {
+        path:'**',
         loadChildren:'./pages/category/category.module#CategoryModule'
     }
 ];
