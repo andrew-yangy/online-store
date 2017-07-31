@@ -15,6 +15,7 @@ export class CartPageComponent extends CartBaseComponent{
         super(cartService);
     }
 
-    ngOnInit() { }
+    ngOnInit() {
 
+    }
 }

@@ -19,5 +19,8 @@ export class CartBaseComponent{
                 }
                 this.totalPrice = total;
             })
-    }
+    };
+    removeFromCart = index => {
+        this.cartService.removeCart(index);
+    };
 }

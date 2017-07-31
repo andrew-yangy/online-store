@@ -36,6 +36,7 @@ import {version} from "punycode";
       background: #dadada;
       font-weight: bold;
       color: #7d7d7d;
+      text-align: center;
     }
     .actions div:first-child {
       margin-bottom: 2px;

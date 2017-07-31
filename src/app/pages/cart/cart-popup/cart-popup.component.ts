@@ -28,9 +28,6 @@ export class CartPopupComponent extends CartBaseComponent{
             this.isVisible = res;
         });
     }
-    removeFromCart = index => {
-        this.cartService.removeCart(index);
-    };
     onPageClick = (event) => {
         if (this.isVisible && !this.eleref.nativeElement.contains(event.target) && event.target.className !== 'cart-remove'){
             this.cartService.toggleCart();

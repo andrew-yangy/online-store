@@ -18,6 +18,17 @@
                     <div class="cart-item-title">{{cart.product.title}}</div>
                 </div>
             </div>
+            <div class="cart-item-cell cart-item-quantity">
+                <quantity-control [quantity]="cart.quantity" (onChange)="cart.quantity = $event"></quantity-control>
+            </div>
+            <div class="cart-item-cell cart-item-total">
+                <div class="item-price">
+                    {{cart.quantity*cart.product.price | currency :'USD':true }}
+                </div>
+            </div>
+            <div class="cart-item-cell cart-item-action">
+                <div class="item-remove" (click)="removeFromCart(i)">X</div>
+            </div>
         </div>
     </div>
 </div>
