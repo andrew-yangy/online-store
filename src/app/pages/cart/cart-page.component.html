@@ -11,7 +11,7 @@
         </div>
         <div class="cart-item-row" *ngFor="let cart of cartList;let i = index">
             <div class="cart-item-cell cart-item-product">
-                <div class="cart-item-thumbnail" [ngStyle]="{'background-image': 'url(assets/imgs/' + cart.product.image + ')'}">
+                <div class="cart-item-thumbnail" [ngStyle]="{'background-image': 'url(./assets/imgs/' + cart.product.image + ')'}">
                 </div>
                 <div class="cart-item-info">
                     <div class="cart-item-brand">{{cart.product.brand}}</div>
