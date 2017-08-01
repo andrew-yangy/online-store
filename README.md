@@ -1,14 +1,20 @@
 # OnlineStore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.5.
+This is a online store app implemented using Angular 4.
 
-## Development server
+## How to start
 
+You will need to clone the source code of online-store GitHub repository.
+
+`git clone https://github.com/ddvkid/online-store.git`
+
+After the repository is cloned, go inside of the repository directory and install dependencies:
+
+```
+cd online-store
+npm install
+```
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
 
 ## Build
 
@@ -22,7 +28,14 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 Before running the tests make sure you are serving the app via `ng serve`.
+#### Scenarios to be tested
+* should display 6 products.
+* should display cart popup.
+* should be able to add product to cart from image hover button.
+* should be able to navigate to product page from image hover button.
+* should be able to remove product from cart popup.
+* should be able to navigate to cart page from cart popup.
+* should be able to add product to cart from product page.
+* should be able to remove product from cart page.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Notes

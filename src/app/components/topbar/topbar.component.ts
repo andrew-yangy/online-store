@@ -35,7 +35,7 @@ import {CartService} from "../../services/cart.service";
                 </ul>
             </div>
             <div class="header-cart-wrapper">
-                <div class="header-cart"(click)="toggleCartPopup($event)">
+                <div class="header-cart" (click)="toggleCartPopup($event)">
                     <div class="mobil-shopping-cart">
                         <span><i class="fa fa-shopping-cart fa-2x"></i> <span *ngIf="cart_num">( {{cart_num}} )</span></span>
                     </div>
