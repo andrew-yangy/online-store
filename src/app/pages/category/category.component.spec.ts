@@ -10,17 +10,15 @@ import {categoryRoutes} from "./category.routes";
 import {CartService} from "../../services/cart.service";
 import {ProductService} from "../../services/products.service";
 import {BrowserModule} from "@angular/platform-browser";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule} from "@angular/forms";
 import {RouterTestingModule} from "@angular/router/testing";
 import {HttpModule} from "@angular/http";
 
-describe('CategoryComponent', () => {
+describe('Category Page', () => {
   let component: CategoryComponent;
   let fixture: ComponentFixture<CategoryComponent>;
   let cartPageComponent: CartPageComponent;
   let products: Product[];
-  let cartList: Cart[];
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -58,12 +56,15 @@ describe('CategoryComponent', () => {
     ];
   });
 
-  it('add to shopping cart, add a duplicate item should increment the quantity for that item.', () => {
+  it('test shopping cart, add a duplicate item should increment the quantity for that item.', () => {
     component.addToCart(products[0]);
     expect(cartPageComponent.cartList).toEqual([{product:products[0],quantity:1}]);
+    expect(cartPageComponent.totalPrice).toEqual(40);
     component.addToCart(products[0]);
     expect(cartPageComponent.cartList).toEqual([{product:products[0],quantity:2}]);
+    expect(cartPageComponent.totalPrice).toEqual(80);
     component.addToCart(products[1]);
     expect(cartPageComponent.cartList).toEqual([{product:products[0],quantity:2},{product:products[1],quantity:1}]);
+    expect(cartPageComponent.totalPrice).toEqual(108);
   });
 });
