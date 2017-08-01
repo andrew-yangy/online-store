@@ -64,7 +64,8 @@ import {CartService} from "../../services/cart.service";
 `
 })
 export class TopbarComponent implements OnInit {
-    private cart_num:number;
+    public collapse: boolean = false;
+    public cart_num:number;
     constructor(
         private cartService: CartService
     ) { }

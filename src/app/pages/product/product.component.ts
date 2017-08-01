@@ -11,7 +11,7 @@ import {CartService} from "../../services/cart.service";
 })
 export class ProductComponent implements OnInit {
     private sub;
-    private product:Product;
+    public product:Product;
     quantity: number = 1;
     constructor(private route: ActivatedRoute,
                 private productService:ProductService,
