@@ -4,9 +4,9 @@ This is a online store app implemented using Angular 4.
 
 ## Demo
 
-<a target="_blank" href="https://ddvkid.github.io/ng-dashboard"><img src="./screenshot.png" width="600" alt="Sky Blue"/></a>
+<a target="_blank" href="https://ddvkid.github.io/online-store"><img src="./screenshot.png" width="600" alt="Sky Blue"/></a>
 
-<a target="_blank" href="https://ddvkid.github.io/ng-dashboard">Live Demo</a>
+<a target="_blank" href="https://ddvkid.github.io/online-store">Live Demo</a>
 
 ## How to start
 
