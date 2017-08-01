@@ -22,6 +22,9 @@ export class CartService {
         else current.push(cart);
         this.cartListSubject.next(current);
     };
+    reloadCart = (cartList) => {
+        this.cartListSubject.next(cartList);
+    };
     removeCart = index => {
         let current = this.cartListSubject.getValue();
         current.splice(index,1);

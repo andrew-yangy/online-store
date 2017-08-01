@@ -2,7 +2,7 @@
     <div class="cart-page-header">
         <h1>Shopping Cart</h1>
     </div>
-    <div class="cart-page-content">
+    <div class="cart-page-content" *ngIf="cartList.length > 0">
         <div class="cart-item-header cart-item-row">
             <div class="cart-item-cell cart-item-product"><span>Product</span></div>
             <div class="cart-item-cell cart-item-quantity"><span>Quantity</span></div>
@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="cart-item-cell cart-item-quantity">
-                <quantity-control [quantity]="cart.quantity" (onChange)="cart.quantity = $event"></quantity-control>
+                <quantity-control [quantity]="cart.quantity" (onChange)="changeQuantity(cart,$event)"></quantity-control>
             </div>
             <div class="cart-item-cell cart-item-total">
                 <div class="item-price">
@@ -30,5 +30,39 @@
                 <div class="item-remove" (click)="removeFromCart(i)">X</div>
             </div>
         </div>
+        <div class="row cart-total">
+            <div class="col-lg-offset-6">
+                <div class="cart-total-row row">
+                    <div class="col-md-6 cart-total-label">
+                        Cart overview
+                    </div>
+                    <div class="col-md-6 cart-total-value"></div>
+                </div>
+                <div class="cart-total-row row">
+                    <div class="col-md-6 cart-total-label">
+                        subtotal
+                    </div>
+                    <div class="col-md-6 cart-total-value">
+                        {{totalPrice | currency :'USD':true}}
+                    </div>
+                </div>
+                <div class="cart-total-row row">
+                    <div class="col-md-6 cart-total-label">
+                        total
+                    </div>
+                    <div class="col-md-6 cart-total-value cart-total-price">
+                        {{totalPrice | currency :'USD':true}} AUD
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-buttons">
+            <div class="continue-shopping"><a routerLink="/">continue shopping</a></div>
+            <div class="checkout-button button button-primary button-large">Checkout ({{totalPrice | currency :'USD':true}})</div>
+        </div>
+    </div>
+    <div class="cart-page-content" *ngIf="cartList.length == 0">
+        <h4>Your cart is empty.</h4>
+        <a routerLink="/">Go shopping</a>
     </div>
 </div>

@@ -6,7 +6,6 @@ import {RouterModule} from "@angular/router";
 import { productRoutes} from "./product.routes";
 import {SharedModule} from "../../shared/shared.module";
 import {ProductComponent} from "./product.component";
-import {QuantityControlComponent} from "../../components/quantity-control/quantity-control.component";
 
 @NgModule({
     imports: [
@@ -14,8 +13,7 @@ import {QuantityControlComponent} from "../../components/quantity-control/quanti
         RouterModule.forChild(productRoutes)
     ],
     declarations: [
-        ProductComponent,
-        QuantityControlComponent,
+        ProductComponent
     ]
 })
 export class ProductModule { }

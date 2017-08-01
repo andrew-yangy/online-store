@@ -7,15 +7,13 @@ import {SharedModule} from "../../shared/shared.module";
 import {RouterModule} from "@angular/router";
 import {CartPageComponent} from "./cart-page.component";
 import {cartPageRoutes} from "./cart-page.routes";
-import {QuantityControlComponent} from "../../components/quantity-control/quantity-control.component";
 @NgModule({
     imports: [
         SharedModule,
         RouterModule.forChild(cartPageRoutes)
     ],
     declarations: [
-        CartPageComponent,
-        QuantityControlComponent
+        CartPageComponent
     ]
 })
 export class CartPageModule { }

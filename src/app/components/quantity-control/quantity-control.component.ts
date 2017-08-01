@@ -2,37 +2,36 @@
  * Created by andrew.yang on 7/31/2017.
  */
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {version} from "punycode";
 
 @Component({
     selector: 'quantity-control',
     styles: [`
     :host {
-      height: 56px;
+      height: 58px;
       display: inline-block;
     }
     .number, 
     .actions {
-      height: 56px;
+      height: 58px;
       width: 50px;
       float: left;
     }
     .input-style {
       text-align: center;
       width:50px;
-      line-height: 54px;
+      line-height: 58px;
       background: #eee;
       color:#7b7b7b;
       border: 0;
     }
     .actions {
       margin-left: 2px;
-      width: 27px;
+      width: 29px;
     }
     .actions div {
-      height: 27px;
-      width: 27px;
-      line-height: 27px;
+      height: 29px;
+      width: 29px;
+      line-height: 29px;
       background: #dadada;
       font-weight: bold;
       color: #7d7d7d;

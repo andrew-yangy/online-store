@@ -42,8 +42,9 @@
     padding-bottom: 5%;
 }
 .product-image {
-    width: 330px;
-    height: 220px;
+    width: 100%;
+    height: 0;
+    padding-bottom: 66.66667%;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -64,6 +65,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    text-align: center;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%)
 }
@@ -98,4 +100,9 @@
     font-size: 1.14286em;
     color: #9f9f9f;
     font-family: Playfair Display;
+}
+@media screen and (max-width: 767px) {
+    .header-block {
+        width: 100%;
+    }
 }

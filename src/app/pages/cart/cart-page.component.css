@@ -1,8 +1,10 @@
 :host {
-    position: absolute;
-    width:100%;
-    height: calc(100vh - 70px);
-    background: #f6f6f6;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #f6f6f6;
+    padding-bottom: 70px;
 }
 .cart-page-container {
     max-width: 1140px;
@@ -17,13 +19,14 @@
 }
 .cart-page-content {
     max-width:940px;
-    margin:0 70px;
+    margin:30px 70px;
     background-color: white;
     padding:60px;
 }
 .cart-item-cell {
     width: 100%;
 }
+.cart-total,
 .cart-item-row {
     border-bottom: 1px solid #e4e4e4;
 }
@@ -79,7 +82,40 @@
 .item-remove:hover {
     color:black;
 }
-@media screen and (min-width: 720px) {
+
+.cart-total {
+    text-transform: uppercase;
+    color:#9f9f9f;
+    letter-spacing: 2px;
+    margin:0;
+}
+.cart-total-row {
+    line-height: 30px;
+}
+.cart-total-label {
+    text-align: left;
+}
+.cart-total-value {
+    text-align: right;
+}
+.cart-total-price {
+    color:black
+}
+
+.cart-buttons {
+    padding:20px 0;
+}
+.continue-shopping a {
+    text-transform: uppercase;
+    color: black;
+    float: left;
+}
+.checkout-button {
+    float: right;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
     .cart-item-row {
         display: table;
         width: 100%;
@@ -96,5 +132,42 @@
         display: table-cell;
         vertical-align: top;
         text-align: right;
+    }
+}
+@media screen and (max-width: 820px) {
+    .cart-page-content {
+        margin:0;
+    }
+    .cart-page-header h1 {
+        margin: 30px 0;
+    }
+    .cart-item-header {
+        display: none;
+    }
+    .cart-item-product {
+        width: 100%;
+        float: left;
+        margin-left: 0;
+        padding-bottom: 15px;
+    }
+    .cart-item-quantity {
+        width: 80%;
+        float: left;
+        padding-bottom: 15px;
+        text-align: left;
+    }
+    .cart-item-total,
+    .cart-item-action {
+        text-align: right;
+    }
+    .cart-total-label {
+        float: left;
+    }
+    .continue-shopping a {
+        float: none;
+    }
+    .checkout-button {
+        float: none;
+        margin:20px 0 0 0;
     }
 }

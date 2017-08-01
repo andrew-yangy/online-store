@@ -18,4 +18,8 @@ export class CartPageComponent extends CartBaseComponent{
     ngOnInit() {
 
     }
+    changeQuantity = (cart,quantity) => {
+        cart.quantity = quantity;
+        this.cartService.reloadCart(this.cartList);
+    }
 }

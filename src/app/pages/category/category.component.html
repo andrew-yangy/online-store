@@ -5,14 +5,13 @@
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec mollis sem. Etiam id luctus libero.
                 Vivamus vulputate urna eget velit iaculis, et interdum elit pellentesque. Duis porta nunc neque, nec volutpat erat lacinia a.
-                Aliquam iaculis iaculis augue, sed consequat arcu sagittis vel. Cras non magna neque.
             </p>
         </div>
     </div>
 </div>
 <div class="layout-container">
     <div class="product-grid">
-        <div class="col-md-4" *ngFor="let product of products;let i = index">
+        <div class="col-md-4 col-sm-6" *ngFor="let product of products;let i = index">
             <div class="image-container">
                 <div class="product-image" [ngStyle]="{'background-image': 'url(../../../assets/imgs/' + product.image + ')'}"></div>
                 <div class="overlay">
